@@ -1,8 +1,8 @@
 package com.amalitech.search.megaCorp.service;
 
-import search.megaCorp.model.Department;
-import search.megaCorp.util.BinarySearch;
-import search.megaCorp.util.LinearSearch;
+import com.amalitech.search.megaCorp.model.Department;
+import com.amalitech.search.megaCorp.util.BinarySearch;
+import com.amalitech.search.megaCorp.util.LinearSearch;
 
 public class FindEmployee {
 

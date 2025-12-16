@@ -1,14 +1,14 @@
 package com.amalitech.search.megaCorp;
 
-import search.megaCorp.model.Department;
+import com.amalitech.search.megaCorp.model.Department;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static search.megaCorp.service.FindEmployee.findEmployee;
+import static com.amalitech.search.megaCorp.service.FindEmployee.findEmployee;
 
 public class MegaCorpSearch {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Department techSupport = new Department(
                 "Tech Support",
                 List.of(88),
