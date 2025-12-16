@@ -71,3 +71,4 @@ To solve this problem, your code must follow these rules:
 
     * If the employee is not found in the current department, you must check **every sub-department recursively**.
 
+---
