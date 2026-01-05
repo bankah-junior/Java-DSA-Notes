@@ -1,6 +1,6 @@
 package com.amalitech.queue;
 
-public class QueueDemo {
+public class QueueArrayImpl {
     int queueLength = 4;
     int[] items = new int[queueLength];
     int front = -1;
@@ -53,7 +53,7 @@ public class QueueDemo {
     }
 
     public static void main(String[] args) {
-        QueueDemo q = new QueueDemo();
+        QueueArrayImpl q = new QueueArrayImpl();
 
         q.enQueue(1);
         q.enQueue(2);
