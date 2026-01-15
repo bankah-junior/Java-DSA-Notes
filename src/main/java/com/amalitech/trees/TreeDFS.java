@@ -104,7 +104,31 @@ public class TreeDFS {
         return node;
     }
 
-    public static void main(String args[]){
+    /**
+     * Height of tree
+     * @return int
+     */
+    private int height(Node node) {
+        if (root == null) return 0;
+
+        int left = height(root.leftChild);
+        int right = height(root.rightChild);
+
+        return Math.max(left + 1, right + 1);
+    }
+
+    private int optimizedHeight(Node node) {
+        if (node == null) return -1;
+
+        if (node.leftChild == null && node.rightChild == null) return 0;
+
+        int left = optimizedHeight(node.leftChild);
+        int right = optimizedHeight(node.rightChild);
+
+        return Math.max(left, right) + 1;
+    }
+
+    public static void main(String[] args){
         TreeDFS tree = new TreeDFS();
         tree.insert(10);
         tree.insert(30);
@@ -119,6 +143,9 @@ public class TreeDFS {
 
         System.out.println("PostOrder");
         tree.postOrder(tree.root);
+
+        //System.out.println("Height of tree: " + tree.height(tree.root));
+        System.out.println("Optimized Height of tree: " + tree.optimizedHeight(tree.root));
 
     }
 
