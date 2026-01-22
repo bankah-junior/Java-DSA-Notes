@@ -1,5 +1,7 @@
 package com.amalitech.problems.licensePlateValidator;
 
+import java.util.Scanner;
+
 public class LicensePlateValidatorSolution {
     public static String LicensePlateChecker(String licensePlate) {
         String replaceHyphen = licensePlate.replaceAll("-", "");
@@ -9,32 +11,33 @@ public class LicensePlateValidatorSolution {
             if (cleanedLicensePlate.length() == 6){
                 String firstThreeAfterRegionCode = cleanedLicensePlate.substring(0, 3);
                 String secondThreeAfterRegionCode = cleanedLicensePlate.substring(3, 6);
-                // Validate all six characters
                 if (!cleanedLicensePlate.matches("[A-Z0-9]{6}")) {
-                    return "Invalid";
+                    return "Invalid characters";
                 }
                 return firstThreeAfterRegionCode + "-" + secondThreeAfterRegionCode;
-            }
-            if (cleanedLicensePlate.length() == 8){
+            } else if (cleanedLicensePlate.length() == 8){
                 String regionCode = cleanedLicensePlate.substring(0, 2);
                 String lastSix = cleanedLicensePlate.substring(2, 8);
                 String firstThreeAfterRegionCode = cleanedLicensePlate.substring(2, 5);
                 String secondThreeAfterRegionCode = cleanedLicensePlate.substring(5, 8);
-                // Validate region code
                 if (!regionCode.matches("[A-Z]{2}")) {
-                    return "Invalid";
+                    return "Invalid region code";
                 }
-                // Validate last six characters
                 if (!lastSix.matches("[A-Z0-9]{6}")) {
-                    return "Invalid";
+                    return "Invalid characters";
                 }
                 return regionCode + "-" + firstThreeAfterRegionCode + "-" + secondThreeAfterRegionCode;
+            } else {
+                return "Wrong character count";
             }
         }
 
-        return "Invalid";
+        return "Insufficient letters/digits";
     }
     public static void main(String[] args) {
+//        System.out.print("Enter license plate: ");
+//        String input = new Scanner(System.in).nextLine();
+//        System.out.println(LicensePlateChecker(input));
         String licensePlate01 = "CA-ABC-123";
         String licensePlate02 = "XYZ789";
         String licensePlate03 = "12-AB34CD";
