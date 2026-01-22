@@ -13,7 +13,9 @@ public class ParkingSpaceAllocationSolution {
         int caseNumber = 1;
 
         while (true) {
+            System.out.print("Enter number of spaces: ");
             int n = scanner.nextInt(); // Number of spaces
+            System.out.print("Enter number of vehicles: ");
             int m = scanner.nextInt(); // Number of vehicles
 
             if (n == 0 && m == 0) {
@@ -22,11 +24,15 @@ public class ParkingSpaceAllocationSolution {
 
             List<Space> spaces = new ArrayList<>();
             for (int i = 0; i < n; i++) {
+                int index = i + 1;
+                System.out.printf("Enter space %d: (name, length): ", index);
                 spaces.add(new Space(scanner.next(), scanner.nextInt()));
             }
 
             List<Vehicle> vehicles = new ArrayList<>();
             for (int i = 0; i < m; i++) {
+                int index = i + 1;
+                System.out.printf("Enter vehicle %d (name, length): ", index);
                 vehicles.add(new Vehicle(scanner.next(), scanner.nextInt()));
             }
 
